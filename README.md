@@ -1,6 +1,6 @@
 # InvisibilityCloak
 
-_Programa para simular la capa de invisibilidad de las películas de ficción de Harry Potter mediante el procesamiento de imagen con la ayuda de OpenCV_
+_Programa para simular la capa de invisibilidad de las películas de ficción de Harry Potter mediante el procesamiento de imagen._
 
 ## 🛠️ Construcción
 
