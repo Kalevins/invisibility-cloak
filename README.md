@@ -21,8 +21,6 @@ pip install -r .\requirements.txt
 * **Kevin Muñoz Rengifo** - *Desarrollo* - [Kalevins](https://github.com/Kalevins)
 * **Juan Manuel Solis Prado** - *Desarrollo* - [SlowProgrammer](https://github.com/SlowProgrammer)
 
-También puedes ver la lista de todos los [contribuyentes](https://github.com/kevinmuz55/InvisibilityCloak/contributors) quíenes han participado en este proyecto.
-
 ## 🎁 Expresiones de Gratitud
 
 * Agradecimientos especiales al curso de sistemas ubicuos de la Universidad del Cauca
