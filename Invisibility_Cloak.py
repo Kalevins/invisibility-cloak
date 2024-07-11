@@ -11,7 +11,7 @@ time.sleep(3)
 background=0
 
 print("Capturando fondo...")
-# Captura y almacenamiento del fondo estático 
+# Captura y almacenamiento del fondo estático
 # (captura de multiple frames para adaptar al entorno y reduccion de ruido)
 for i in range(60):
     ret,background = cap.read()
@@ -22,11 +22,11 @@ print("Ponte frente a la camara con tu capa. Presiona 's' para salir...")
 while(cap.isOpened()):
     # Frame del video
     ret, img = cap.read()
-    
+
     # Verificacion
     if not ret:
         break
-    
+
     # Convierte el color del frame RGB a HSV
     hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
@@ -42,7 +42,7 @@ while(cap.isOpened()):
     #mask = cv2.add(mask1, mask2)
     mask = mask1+mask2
     # ----------------------------------------------------------------------
-    
+
     # Aplica Erocion y dilatacion al objeto detectado de color rojo
     mask_medianBlur = cv2.medianBlur(mask, 13)
     #mask_aperture = cv2.morphologyEx(mask, cv2.MORPH_OPEN, np.ones((3,3),np.uint8),iterations = 2)
@@ -52,18 +52,18 @@ while(cap.isOpened()):
 
     # Elimina el objeto de color rojo en el frame
     delete_object = cv2.bitwise_and(img,img,mask=mask_invert)
-    
+
     # Muestra el fondo estático donde se encuentra el objeto de color rojo en el frame
     background_object = cv2.bitwise_and(background,background,mask=mask_dilate)
-    
+
     # Suma ponderada entre el objeto eliminado y fondo estático
     ## Muestra el fondo estatico donde se elimino el objeto de color rojo en el frame
     final_output = cv2.addWeighted(delete_object,1,background_object,1,0)
-    
+
     #Muestra el frame
     cv2.imshow('Original',img)
     cv2.imshow('Final',final_output)
 
     if cv2.waitKey(10) & 0xFF == ord('s'):
         break
-    
+
